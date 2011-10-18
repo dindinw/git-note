@@ -1,0 +1,80 @@
+
+How to replace the master by a branch
+=====================================
+git branch rep_branch
+git checkout rep_branch
+git merge --no-commit -s ours master
+git commit -m "It's replacement for branch to master"
+git checkout master
+git merge rep_branch 
+
+Using GUI tool for diff and resove merge conflicts
+==================================================
+By using meld
+meld . 
+git config merge.tool meld
+git mergetool
+
+Checkout only single file
+=========================
+git clone --no-checkout --depth 1 foo@bar.com:/path/to/your/repo my_repo
+cd my_repo
+git checkout HEAD your_file_name
+
+NOTE: the entires content of your remote repo is copied, it's can't be avoid, event you can shortage the history by using "--depth 1" 
+
+Different between git-diff
+==========================
+git diff 
+    show diff of unstaged changes
+git diff --cached 
+    show diff of staged changes
+git diff HEAD 
+    show diff of all staged or unstaged changes (between working and last commit)
+git 
+
+=========================
+Using GitHub
+=========================
+
+Set up ssh key/account for github
+=================================
+
+1. Create ssh isa public key by fellowing steps:
+
+$ cd ~/.ssh
+$ mkdir key_backup && cp is_rsa* key_backup
+$ rm id_rsa*
+$ ssh-keygen -t rsa -C "your_email@youremail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/your_user_dir/.ssh/id_rsa): <press enter>
+Enter passphrase (empty for no passphrase): <enter your passphrase>
+Enter same passphrase again: <enter again>
+Your identification has been saved in /home/your_user_dir/.ssh/id_rsa.
+Your public key has been saved in /home/your_user_dir/.ssh/id_rsa.pub.
+The key fingerprint is:
+7f:ba:37:75:76:ad:24:e6:f4:36:f5:4a:d0:9e:32:ee your_email@youremail.com
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|             .   |
+|        S   . . .|
+|         .  +oo.*|
+|          .++=+=o|
+|           +++= .|
+|          o+Eo.o |
++-----------------+
+
+2. now the id_ras.pub (isa public key) is created, go to the GitHub site ( “Account Settings” > “SSH Public Keys” > “Add another public key”) copy the content of the id_ras.pub. 
+
+3. test your ssh connection with gibhub
+
+$ ssh -T git@github.com
+The authenticity of host 'github.com (207.97.227.239)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of known hosts.
+Hi your_username! You've successfully authenticated, but GitHub does not provide shell access.
+
