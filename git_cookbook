@@ -33,6 +33,23 @@ git diff HEAD
     show diff of all staged or unstaged changes (between working and last commit)
 git 
 
+
+Remove file form history
+========================
+
+1. remove file from your local history.
+$ git filter-branch --index-filter 'git rm --cached --ignore-unmatch $file_name' HEAD
+
+2. force push back to the remote repo.
+$ git push origin master --force
+
+3. clean up 
+$ rm -rf .git/refs/original/
+$ git reflog expire --expire=now --all
+$ git gc --prune=now
+$ git gc --aggressive --prune=now
+
+
 =========================
 Using GitHub
 =========================
