@@ -39,7 +39,10 @@ Some other text
 > 
 > Cool?
 
-### Code with syntax ###
+
+### ###
+
+### Code with Syntax ###
 
 ```java
 // Hello World in Java syntax.
@@ -50,3 +53,11 @@ class HelloWorld {
 	}
 }
 ```
+
+```ruby
+# Hello World in Ruby syntax.
+ 
+ puts 'Hello world'
+
+```
+
