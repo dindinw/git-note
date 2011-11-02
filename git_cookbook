@@ -96,6 +96,29 @@ Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of know
 Hi your_username! You've successfully authenticated, but GitHub does not provide shell access.
 
 
+Initial repo setup on github
+============================
+Global setup:
+  git config --global user.name "alex wu"
+  git config --global user.email wuyiding@gmail.com
+
+Next steps:
+  mkdir your-proj
+  cd your-proj
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:dindinw/your-proj.git
+  git push -u origin master
+      
+Existing Git Repo?
+  cd existing_git_repo
+  git remote add origin git@github.com:dindinw/your-proj.git
+  git push -u origin master
+      
+
+
 Syncing with private(myself) and public(github) repos
 =====================================================
 1. change the remote name
