@@ -1,3 +1,9 @@
+The Makedown for Github Syntax Guild
+====================================
+
+
+### Headlines ###
+
 This is an H1
 =============
 # This is also an H1  
@@ -19,10 +25,13 @@ bar.foo bar, foo bar.foo bar, foo bar.foo bar, foo bar.foo bar, foo bar.foo bar
 This is the second paragraph. This time we don't hard wrap the line. so foo bar, foo bar.foo bar. foo bar,foo bar,foo bar. foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.          
 
 
+### Blockquote ###
+
 > This is a blockquote with two paragraphs.
 > 
 > paragraph 2
 
+Some other text
 
 > This is another blockquote.
 > 
@@ -30,6 +39,7 @@ This is the second paragraph. This time we don't hard wrap the line. so foo bar,
 > 
 > Cool?
 
+### Code with syntax ###
 
 ```java
 // Hello World in Java syntax.
