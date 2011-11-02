@@ -10,14 +10,20 @@ This is an headline H2
 ##### This is an H5
 ###### This is an H6
 
+This a regural paragraphs.
+with hard warp the line foo bar, foo bar.
+
+This is the second paragraph. This time we don't hard wrap the line. so foo bar, foo bar.foo bar. foo bar,foo bar,foo bar.
+
 
 > This is a blockquote with two paragraphs.
 > 
 > paragraph 2
 
-> This is a blockquote is be nested.
+
+> This is another blockquote.
 > 
-> > This is the nest blockquote
+> > This is the nested blockquote
 > 
 > Cool?
 
