@@ -44,7 +44,7 @@ Some other text
 
 ### Code with Syntax ###
 
-```java
+~~~~ {.java}
 // Hello World in Java syntax.
 
 class HelloWorld {
@@ -52,7 +52,7 @@ class HelloWorld {
 		System.out.println( "Hello World!" );
 	}
 }
-```
+~~~~
 
 ```ruby
 # Hello World in Ruby syntax.
