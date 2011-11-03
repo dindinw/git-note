@@ -1,5 +1,34 @@
-The Makedown for Github Syntax Guild
-====================================
+The Makedown for Github Guide 
+=============================
+
+
+Install
+=======
+
+install haskell
+
+~~~~
+sudo apt-get install ghc6 cabal-install
+cabal install cabal-install
+~~~~
+
+add ~/.cabal/bin to your .bashrc
+
+~~~~
+export PATH=~/.cabal/bin:$PATH
+~~~~
+
+install pandoc with syntax highlight
+
+~~~~
+cabal update
+cabal install pandoc -fhighlighting
+~~~~
+
+install markdown2pdf
+
+~~~~
+sudo apt-get install texlive-latex-recommended 
 
 
 Headlines 
@@ -76,6 +105,16 @@ Bullet List
     + pears
     + peaches
 ~~~~
+
+Table
+=====
+
+Right     Left     Center     Default
+-------   ------ ----------   -------
+     12     12        12           12
+    123     123       123          123
+      1     1          1             1
+
 
 Code with Syntax
 ================
