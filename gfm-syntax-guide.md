@@ -2,19 +2,37 @@ The Makedown for Github Syntax Guild
 ====================================
 
 
-### Headlines ###
+Headlines 
+=========
 
+H1
+
+~~~~
 This is an H1
 =============
 # This is also an H1  
 # This is an H1 again (look petty in txt) #
+~~~~
+
+H2
+
+~~~~
 This is an headline H2
 ----------------------
 ## This is also an H2
+~~~~
+
+H3-H6
+
+~~~~
 ### This is an H3
 #### This is an H4
 ##### This is an H5
 ###### This is an H6
+~~~~
+
+Paragraphs
+==========
 
 This a regural paragraphs.
 with hard warp the line foo bar, foo bar. foo bar, foo bar.foo bar, foo bar.foo
@@ -25,7 +43,8 @@ bar.foo bar, foo bar.foo bar, foo bar.foo bar, foo bar.foo bar, foo bar.foo bar
 This is the second paragraph. This time we don't hard wrap the line. so foo bar, foo bar.foo bar. foo bar,foo bar,foo bar. foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.foo bar,foo bar.          
 
 
-### Blockquote ###
+Blockquote
+==========
 
 > This is a blockquote with two paragraphs.
 > 
@@ -39,10 +58,28 @@ Some other text
 > 
 > Cool?
 
+Bullet List
+===========
 
-### ###
+* fruits
+    + apples
+        - macintosh
+        - red delicious
+    + pears
+    + peaches
 
-### Code with Syntax ###
+~~~~
+* fruits
+    + apples
+        - macintosh
+        - red delicious
+    + pears
+    + peaches
+~~~~
+
+Code with Syntax
+================
+
 
 ~~~~ {.java}
 // Hello World in Java syntax.
@@ -54,10 +91,10 @@ class HelloWorld {
 }
 ~~~~
 
-```ruby
+~~~~ {.ruby .numberLines}
 # Hello World in Ruby syntax.
  
  puts 'Hello world'
 
-```
+~~~~
 
