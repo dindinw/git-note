@@ -12,5 +12,5 @@ md-guide-s5.html: ../gfm-syntax-guide.md
 md-guide.pdf: ../gfm-syntax-guide.md
 	markdown2pdf $< -o $@
 clean:
-	-rm -f md-guide.html md-guide-single.html md-guide-s5.html
+	-rm -f md-guide.html md-guide-single.html md-guide-s5.html md-guide.pdf
 
