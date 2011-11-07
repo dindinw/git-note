@@ -121,7 +121,22 @@ Same thing but with paragraphs:
 
 3. Third
 
+With code block in Ordered list
+1. First
 
+	~~~~~~~~~ {.bash}
+	$echo "hello,world"
+	~~~~~~~~~~~~~~~~
+
+2. Second:
+	* Fee
+	* Fie
+	* Foe
+
+3. Third
+	~~~~~~~~~~{.ruby}
+	push 'hello world!"
+	~~~~~~~~~~~~~~~~~~~
 This was an error in Markdown 1.0.1:
 
 *	this
