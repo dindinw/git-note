@@ -3,12 +3,12 @@ How to replace the master by a branch
 =====================================
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
-git branch rep_branch
-git checkout rep_branch
-git merge --no-commit -s ours master
-git commit -m "It's replacement for branch to master"
-git checkout master
-git merge rep_branch 
+$ git branch rep_branch
+$ git checkout rep_branch
+$ git merge --no-commit -s ours master
+$ git commit -m "It's replacement for branch to master"
+$ git checkout master
+$ git merge rep_branch 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using GUI tool for diff and resove merge conflicts
@@ -16,18 +16,18 @@ Using GUI tool for diff and resove merge conflicts
 By using meld
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
-meld . 
-git config merge.tool meld
-git mergetool
+$ meld . 
+$ git config merge.tool meld
+$ git mergetool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Checkout only single file
 =========================
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
-git clone --no-checkout --depth 1 foo@bar.com:/path/to/your/repo my_repo
-cd my_repo
-git checkout HEAD your_file_name
+$ git clone --no-checkout --depth 1 foo@bar.com:/path/to/your/repo my_repo
+$ cd my_repo
+$ git checkout HEAD your_file_name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 NOTE: the entires content of your remote repo is copied, it's can't be avoid, event you can shortage the history by using "--depth 1" 
@@ -36,13 +36,12 @@ Different between git-diff
 ==========================
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
-git diff 
-    show diff of unstaged changes
-git diff --cached 
-    show diff of staged changes
-git diff HEAD 
-    show diff of all staged or unstaged changes (between working and last commit)
-git 
+$ git diff 
+    # show diff of unstaged changes
+$ git diff --cached 
+    # show diff of staged changes
+$ git diff HEAD 
+    # show diff of all staged or unstaged changes (between working and last commit)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -124,28 +123,28 @@ Initial repo setup on github
 ----------------------------
 Global setup:
 
-    git config --global user.name "alex wu"
-    git config --global user.email wuyiding@gmail.com
+    $ git config --global user.name "alex wu"
+    $ git config --global user.email wuyiding@gmail.com
 
 Next steps:
 
-    mkdir your-proj
-    cd your-proj
-    git init
-    touch README
-    git add README
-    git commit -m 'first commit'
-    git remote add origin git@github.com:dindinw/your-proj.git
-    git push -u origin master
+    $ mkdir your-proj
+    $ cd your-proj
+    $ git init
+    $ touch README
+    $ git add README
+    $ git commit -m 'first commit'
+    $ git remote add origin git@github.com:dindinw/your-proj.git
+    $ git push -u origin master
 
 * NOTE: the '-u' option made the github repository the default repo when 
         you do 'git push' without any option. the 'u' means 'Upstream".       
 
 Existing Git Repo?
 
-    cd existing_git_repo
-    git remote add origin git@github.com:dindinw/your-proj.git
-    git push -u origin master
+    $ cd existing_git_repo
+    $ git remote add origin git@github.com:dindinw/your-proj.git
+    $ git push -u origin master
       
 
 
