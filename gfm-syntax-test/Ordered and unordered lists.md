@@ -125,9 +125,9 @@ With code block in Ordered list:
 
 1. First
 
-	~~~~~~~~~ {.bash}
+	~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
 	$echo "hello,world"
-	~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2. Second:
 
@@ -137,9 +137,9 @@ With code block in Ordered list:
 
 3. Third
 
-	~~~~~~~~~~ {.ruby}
-	push 'hello world!"
-	~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~ {.ruby}
+	puts 'Hello world'
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This was an error in Markdown 1.0.1:
 
