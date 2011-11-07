@@ -154,81 +154,81 @@ Syncing with private(myself) and public(github) repos
 
 1.	change the remote name
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ cat .git/config
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@github.com:dindinw/git-note.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-
-$ git remote rename origin github
-$ cat .git/config
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "github"]
-	url = git@github.com:dindinw/git-note.git
-	fetch = +refs/heads/*:refs/remotes/github/*
-[branch "master"]
-	remote = github
-	merge = refs/heads/master
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+	$ cat .git/config
+	[core]
+		repositoryformatversion = 0
+		filemode = true
+		bare = false
+		logallrefupdates = true
+	[remote "origin"]
+		url = git@github.com:dindinw/git-note.git
+		fetch = +refs/heads/*:refs/remotes/origin/*
+	[branch "master"]
+		remote = origin
+		merge = refs/heads/master
+	
+	$ git remote rename origin github
+	$ cat .git/config
+	[core]
+		repositoryformatversion = 0
+		filemode = true
+		bare = false
+		logallrefupdates = true
+	[remote "github"]
+		url = git@github.com:dindinw/git-note.git
+		fetch = +refs/heads/*:refs/remotes/github/*
+	[branch "master"]
+		remote = github
+		merge = refs/heads/master
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2.	add my private repo as origin, and set it back as default
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ git remote add origin myrepo-url
-$ git config branch.master.remote origin
-$ cat .git/config
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "github"]
-	url = git@github.com:dindinw/git-note.git
-	fetch = +refs/heads/*:refs/remotes/github/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-[remote "origin"]
-	url = alex@ubuntu-server-9i:~/gitrepo/git-note.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+	$ git remote add origin myrepo-url
+	$ git config branch.master.remote origin
+	$ cat .git/config
+	[core]
+		repositoryformatversion = 0
+		filemode = true
+		bare = false
+		logallrefupdates = true
+	[remote "github"]
+		url = git@github.com:dindinw/git-note.git
+		fetch = +refs/heads/*:refs/remotes/github/*
+	[branch "master"]
+		remote = origin
+		merge = refs/heads/master
+	[remote "origin"]
+		url = alex@ubuntu-server-9i:~/gitrepo/git-note.git
+		fetch = +refs/heads/*:refs/remotes/origin/*
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 3.	add new remote 'all' for mutiple urls
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ git config --add remote.all.url alex@ubuntu-server-9i:~/gitrepo/git-note.git
-$ git config --add remote.all.url git@github.com:dindinw/git-note.git
-$ cat .git/config
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "github"]
-	url = git@github.com:dindinw/git-note.git
-	fetch = +refs/heads/*:refs/remotes/github/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-[remote "origin"]
-	url = alex@ubuntu-server-9i:~/gitrepo/git-note.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[remote "all"]
-	url = alex@ubuntu-server-9i:~/gitrepo/git-note.git
-	url = git@github.com:dindinw/git-note.git
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+	$ git config --add remote.all.url alex@ubuntu-server-9i:~/gitrepo/git-note.git
+	$ git config --add remote.all.url git@github.com:dindinw/git-note.git
+	$ cat .git/config
+	[core]
+		repositoryformatversion = 0
+		filemode = true
+		bare = false
+		logallrefupdates = true
+	[remote "github"]
+		url = git@github.com:dindinw/git-note.git
+		fetch = +refs/heads/*:refs/remotes/github/*
+	[branch "master"]
+		remote = origin
+		merge = refs/heads/master
+	[remote "origin"]
+		url = alex@ubuntu-server-9i:~/gitrepo/git-note.git
+		fetch = +refs/heads/*:refs/remotes/origin/*
+	[remote "all"]
+		url = alex@ubuntu-server-9i:~/gitrepo/git-note.git
+		url = git@github.com:dindinw/git-note.git
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now, we can use 'git push all' to publish my changes to all repos.
 
