@@ -152,7 +152,7 @@ Existing Git Repo?
 Syncing with private(myself) and public(github) repos
 -----------------------------------------------------
 
-1. change the remote name
+###1. change the remote name
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ cat .git/config
@@ -183,7 +183,7 @@ $ cat .git/config
 	merge = refs/heads/master
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2. add my private repo as origin, and set it back as default
+###2. add my private repo as origin, and set it back as default
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ git remote add origin myrepo-url
@@ -205,7 +205,7 @@ $ cat .git/config
 	fetch = +refs/heads/*:refs/remotes/origin/*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. add new remote 'all' for mutiple urls
+###3. add new remote 'all' for mutiple urls
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ git config --add remote.all.url alex@ubuntu-server-9i:~/gitrepo/git-note.git
