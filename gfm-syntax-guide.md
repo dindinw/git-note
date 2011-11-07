@@ -5,27 +5,25 @@ The Makedown for Github Guide
 Install
 =======
 
-install haskell
+Install haskell
 
-~~~~
-sudo apt-get install ghc6 cabal-install
-cabal install cabal-install
-~~~~
+    sudo apt-get install ghc6 cabal-install
+    cabal install cabal-install
 
-add ~/.cabal/bin to your .bashrc
+Add ~/.cabal/bin to your .bashrc
 
 ~~~~
 export PATH=~/.cabal/bin:$PATH
 ~~~~
 
-install pandoc with syntax highlight
+Install pandoc with syntax highlight
 
 ~~~~
 cabal update
 cabal install pandoc -fhighlighting
 ~~~~
 
-install markdown2pdf
+Fix markdown2pdf (lack dependence for texlive) 
 
 ~~~~
 sudo apt-get install texlive-latex-recommended 
@@ -120,7 +118,7 @@ Code with Syntax
 ================
 
 
-~~~~ {.java}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.java}
 // Hello World in Java syntax.
 
 class HelloWorld {
@@ -128,12 +126,12 @@ class HelloWorld {
 		System.out.println( "Hello World!" );
 	}
 }
-~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-~~~~ {.ruby .numberLines}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.ruby .numberLines}
 # Hello World in Ruby syntax.
  
  puts 'Hello world'
 
-~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
