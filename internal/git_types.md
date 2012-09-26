@@ -9,13 +9,13 @@
 the blob type is just the content of your file.
 
 create a empty git reposity for testing. 
-
+    
     $ mkdir test1
     $ cd test1/
     $ git init
     Initialized empty Git repository in /home/alex/works/tools/git-sandbox/test1/.git/
-
-look up the .git/objects folders changes
+    
+look up the `.git/objects` folders changes
 
     $ find .git/objects/
     .git/objects/
@@ -23,7 +23,7 @@ look up the .git/objects folders changes
     .git/objects/info
     $ echo "first file" > first.txt
 
-after git add, a new SHA1 hash 303ff981c488b812b6215f7db7920dedb3b59d9a created.
+after execute `git add`, a new SHA1 hash `303ff981c488b812b6215f7db7920dedb3b59d9a` created.
 
     $ git add .
     $ find .git/objects/
@@ -47,4 +47,3 @@ show the content of the blob
 
     $ git cat-file -p 303ff9
     first file
-
