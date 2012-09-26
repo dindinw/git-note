@@ -9,7 +9,7 @@ There are 4 kinds of Object types in Git :
 ## Blob type
 the blob type is just the content of your file.
 
-create a empty git reposity for testing. 
+create a empty git repository for testing. 
     
     $ mkdir test1
     $ cd test1/
@@ -33,6 +33,23 @@ after execute `git add`, a new SHA1 hash `303ff981c488b812b6215f7db7920dedb3b59d
     .git/objects/30
     .git/objects/30/3ff981c488b812b6215f7db7920dedb3b59d9a
     .git/objects/info
+
+use `303f` as a shorthand of `303ff981c488b812b6215f7db7920dedb3b59d9a`. (the `303f` is the 
+shortest accepted one under the context, when the repository get bigger, the longer hash 
+shorthand may be required.
+
+
+    $ git rev-parse 303
+    303
+    fatal: ambiguous argument '303': unknown revision or path not in the working tree.
+    Use '--' to separate paths from revisions, like this:
+    'git <command> [<revision>...] -- [<file>...]'
+    $ git rev-parse 303f
+    303ff981c488b812b6215f7db7920dedb3b59d9a
+    $ git rev-parse 303ff
+    303ff981c488b812b6215f7db7920dedb3b59d9a
+    $ git rev-parse 303ff9
+    303ff981c488b812b6215f7db7920dedb3b59d9a
 
 show the object type is blob.
 
