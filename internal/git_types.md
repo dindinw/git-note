@@ -66,6 +66,28 @@ show the content of the blob
     $ git cat-file -p 303ff9
     first file
 
+clone a new resposity test1-clone from test1
+
+    $ git clone test1/ test1-clone
+    Cloning into 'test1-clone'...
+    warning: You appear to have cloned an empty repository.
+    done.
+
+$ diff -r test1 test1-clone/
+Only in test1: first.txt
+diff -r test1/.git/config test1-clone/.git/config
+5a6,11
+> [remote "origin"]
+>     fetch = +refs/heads/*:refs/remotes/origin/*
+>     url = /home/alex/works/tools/git-sandbox/test1/
+> [branch "master"]
+>     remote = origin
+>     merge = refs/heads/master
+Only in test1/.git: index
+
+
+
+
 ## Tree Type
 
 ## Commit Type
