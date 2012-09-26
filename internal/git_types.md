@@ -1,11 +1,12 @@
-## Git types
+# Git types
 
-4 kinds of Object types:
+There are 4 kinds of Object types in Git :
   * blob type
   * tree type
   * commit type
+  * tag type
 
-### Blob type
+## Blob type
 the blob type is just the content of your file.
 
 create a empty git reposity for testing. 
