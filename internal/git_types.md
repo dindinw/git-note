@@ -85,9 +85,66 @@ clone a new resposity test1-clone from test1
     >     merge = refs/heads/master
     Only in test1/.git: index
 
+  * clone will add remote repository config (where it comming from)
+  * clone will not copy uncommit file and content (the `first.txt`)
+  * clone will not copy uncommit stages (the `index` file) 
 
 ## Tree Type
 
+create new empty repository `test2`
+
+    $ mkdir test2
+    $ cd test2
+    $ git init
+    Initialized empty Git repository in /Users/alexwu/dev/git-sandbox/test2/.git/
+
+add a file `second.txt` (the blob `1c59427adc4b205a270d8f810310394962e79a8b`) and commit it this time
+
+    $ echo "second file" > second.txt
+    $ git add . 
+    $ find .git/objects/
+    .git/objects/
+    .git/objects//1c
+    .git/objects//1c/59427adc4b205a270d8f810310394962e79a8b
+    .git/objects//info
+    .git/objects//pack
+    $ git commit -a -m "test commit file"
+    [master (root-commit) 50d84af] test commit file
+     1 file changed, 1 insertion(+)
+     create mode 100644 second.txt
+
+now 2 addtional hashes found: `50d84` and `77a48` 
+    $ find .git/objects/
+    .git/objects/
+    .git/objects//1c
+    .git/objects//1c/59427adc4b205a270d8f810310394962e79a8b
+    .git/objects//50
+    .git/objects//50/d84af15d1ab38453ba09a6c2f27dc26f1ab904
+    .git/objects//77
+    .git/objects//77/a48e384b1588e0979c0e132e9bffa2a874668f
+    .git/objects//info
+    .git/objects//pack
+
+check the tree type (`77a48`)
+
+    $ git cat-file -t 77a48
+    tree
+    $ git cat-file -p 77a48
+    100644 blob 1c59427adc4b205a270d8f810310394962e79a8b    second.txt
+
+
 ## Commit Type
+
+The `50d84` is the commit type
+
+    $ git cat-file -t 50d84
+    commit
+    $ git cat-file -p 50d84
+    tree 77a48e384b1588e0979c0e132e9bffa2a874668f
+    author Alex Wu <wuyiding@gmail.com> 1348665401 +0800
+    committer Alex Wu <wuyiding@gmail.com> 1348665401 +0800
+
+
+commit(`50d84`)->tree(`77a48`)->blob(`lc594`)
 
 ## Tag Type
