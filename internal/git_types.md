@@ -1,10 +1,10 @@
 # Git types
 
 There are 4 kinds of Object types in Git :
-  * blob type
-  * tree type
-  * commit type
-  * tag type
+  * [blob type](#blob-type)
+  * [tree type](#tree-type)
+  * [commit type](#commit-type)
+  * [tag type](#tag-type)
 
 ## Blob type
 the blob type is just the content of your file.
@@ -65,3 +65,9 @@ show the content of the blob
 
     $ git cat-file -p 303ff9
     first file
+
+## Tree Type
+
+## Commit Type
+
+## Tag Type
