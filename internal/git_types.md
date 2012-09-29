@@ -148,9 +148,8 @@ The `50d84` is the commit type
 
 commit `50d84` => tree `77a48` => blob `lc594`
 
- * The `blob` references nothing and referenced only by `tree`. 
- * The `tree` references `blob` or `tree`.  
- * The `commit` references `tree` and(or if not parent) a parent `commit` 
-
+ * The `blob` object point to nothing (it can be pointed only by `tree` object). 
+ * The `tree` object point to `blob` objects and/or another `tree` objects. a `tree` object can be pointed by any `commit` objects or `tree` objects
+ * The `commit` object point to a particular `tree` object or(may not parent) a parent `commit` 
 
 ## Tag Type
