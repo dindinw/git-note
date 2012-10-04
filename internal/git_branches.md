@@ -5,7 +5,7 @@ Show branches
 -------------
 We use the git itself for example (checkout from git://github.com/git/git.git)
 
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 $ git rev-parse master
 f84667def209e4a84e37e8488a08e9eca3f208c1
 
@@ -61,7 +61,7 @@ d117dd20961c132b9db780c72a78ca8ecf7508eb RelNotes/1.8.0: various typo and style 
 b0ec16b49eb283156e13bbef26466d948e4fd992 Git 1.8.0-rc0
 abc05cbcd3fdc6e5e14daec80c00b6f51b8e4c7e Merge branch 'jk/completion-tests'
 70dac5f44d60a3f2de68c17157c21e663fc75616 Merge branch 'ep/malloc-check-perturb'
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 The master is `f84667de`
 
@@ -78,7 +78,7 @@ Branches  diffrent than `git log` for 15 lines.
 We can find the log show not only the main-stream of code as my first idea. Actually it shows the time-line.
 (The commits list by commit time)
 
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 $ git log -15 --topo-order --pretty=oneline master
 f84667def209e4a84e37e8488a08e9eca3f208c1 Update draft release notes to 1.8.0
 fa11d7c87940154f3f6463353335c6010b13e5db Merge branch 'nd/grep-reflog'
@@ -95,7 +95,7 @@ b65f30b6b3bf34831b32a1b209bc1955f2bf79df Merge branch 'maint'
 e2c7a5b646bb9a4f126577346697d79b3143d30b Merge branch 'rr/maint-submodule-unknown-cmd' into maint
 0a65df58a0d5b17a72edd4e6247be29ab8af2b09 Merge branch 'sp/maint-http-enable-gzip' into maint
 8a477ddf237978d3f5725b24e286616000ca2ffd Merge branch 'sp/maint-http-info-refs-no-retry' into maint
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 This time, we add `--topo-order` option, we found:
  * `f84667de` is `master`
@@ -104,7 +104,7 @@ This time, we add `--topo-order` option, we found:
 
 It's still different than the `git show-branch`
 
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 $ git log -15 --pretty=oneline --topo-order master 
 f84667def209e4a84e37e8488a08e9eca3f208c1 Update draft release notes to 1.8.0
 fa11d7c87940154f3f6463353335c6010b13e5db Merge branch 'nd/grep-reflog'
@@ -145,10 +145,10 @@ $ git log -15 --pretty=oneline --graph master
 | |\ \ \ \ \  
 | * \ \ \ \ \   8a477ddf237978d3f5725b24e286616000ca2ffd Merge branch 'sp/maint-http-info-refs-no-retry' into maint
 | |\ \ \ \ \ \  
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 This time, we see the output of git log is same when using `--topo-order` comparing with `--graph`
------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 $ git show-branch --topo-order --more=117 |head -15
 [master] Update draft release notes to 1.8.0
 [master^] Merge branch 'nd/grep-reflog'
@@ -165,7 +165,7 @@ $ git show-branch --topo-order --more=117 |head -15
 [master~4^2^] Merge branch 'rr/maint-submodule-unknown-cmd' into maint
 [master~4^2~2] Merge branch 'sp/maint-http-enable-gzip' into maint
 [master~4^2~3] Merge branch 'sp/maint-http-info-refs-no-retry' into maint
------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 We find when use `--more=117` (or bigger), the head 15 line of the output of `git show-branch` is same with `git log`.
 So we got a idea that the `--more` option can effect the output. 
