@@ -114,6 +114,7 @@ add a file `second.txt` (the blob `1c59427adc4b205a270d8f810310394962e79a8b`) an
      create mode 100644 second.txt
 
 now 2 addtional hashes found: `50d84` and `77a48` 
+    
     $ find .git/objects/
     .git/objects/
     .git/objects//1c
@@ -145,6 +146,10 @@ The `50d84` is the commit type
     committer Alex Wu <wuyiding@gmail.com> 1348665401 +0800
 
 
-commit(`50d84`)->tree(`77a48`)->blob(`lc594`)
+commit `50d84` => tree `77a48` => blob `lc594`
+
+ * The `blob` object point to nothing (it can be pointed only by `tree` object). 
+ * The `tree` object point to `blob` objects and/or another `tree` objects. a `tree` object can be pointed by any `commit` objects or `tree` objects
+ * The `commit` object point to a particular `tree` object or(may not parent) a parent `commit` 
 
 ## Tag Type
