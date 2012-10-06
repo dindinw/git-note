@@ -1,8 +1,8 @@
 Git Branches
 ============
 
-Show branches
--------------
+Git show-branch confusion
+-------------------------
 We use the git itself for example (checkout from git://github.com/git/git.git)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -171,3 +171,57 @@ We find when use `--more=117` (or bigger), the head 15 line of the output of `gi
 So we got a idea that the `--more` option can effect the output. 
  
 So, why?
+--------
+
+`git show-branch` will traverse through all the commits on all branches being shown and stop when it find the most recent common commit which present on all of branches.
+That is the reason that if you privide only one branch name, it will show only the branch head commit.
+
+`--more=n` option tell how many additional commits you want to see after the most recent common commit in time along. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+$ git show-branch --more=38 master                                                        $ git show-branch --more=37 master
+[master] Update draft release notes to 1.8.0                                              [master] Update draft release notes to 1.8.0
+[master^] Merge branch 'nd/grep-reflog'                                                   [master^] Merge branch 'nd/grep-reflog'
+[master^^2] revision: make --grep search in notes too if shown                            [master^^2] revision: make --grep search in notes too if shown
+[master~2] Merge branch 'lt/mailinfo-handle-attachment-more-sanely'                       [master~2] Merge branch 'lt/mailinfo-handle-attachment-more-sanely'
+[master~2^2] mailinfo: don't require "text" mime type for attachments                     [master~2^2] mailinfo: don't require "text" mime type for attachments
+[master~2^2^] Git 1.7.9.7                                                                 [master~2^2^] Git 1.7.9.7
+[master~3] Merge branch 'tu/gc-auto-quiet'                                                [master~3] Merge branch 'tu/gc-auto-quiet'
+[master~3^2] silence git gc --auto --quiet output                                         [master~3^2] silence git gc --auto --quiet output
+[master~4] Merge branch 'maint'                                                           [master~4] Merge branch 'maint'
+[master~4^2] Start preparing for 1.7.12.3                                                 [master~4^2] Start preparing for 1.7.12.3
+[master~4^2^] Merge branch 'rr/maint-submodule-unknown-cmd' into maint                    [master~4^2^] Merge branch 'rr/maint-submodule-unknown-cmd' into maint
+[master~4^2~2] Merge branch 'sp/maint-http-enable-gzip' into maint                        [master~4^2^^2] submodule: if $command was not matched, don't parse other args
+[master~4^2~2^2] Enable info/refs gzip decompression in HTTP client                       [master~4^2~2] Merge branch 'sp/maint-http-enable-gzip' into maint
+[master~4^2~3] Merge branch 'sp/maint-http-info-refs-no-retry' into maint                 [master~4^2~2^2] Enable info/refs gzip decompression in HTTP client
+[master~4^2~3^2] Revert "retry request without query when info/refs?query fails"          [master~4^2~3] Merge branch 'sp/maint-http-info-refs-no-retry' into maint
+[master~4^2~4] l10n: Fix to Swedish translation                                           [master~4^2~3^2] Revert "retry request without query when info/refs?query fails"
+[master~5] Documentation: mention `push.default` in git-push.txt                          [master~4^2~4] l10n: Fix to Swedish translation
+[master~6] RelNotes/1.8.0: various typo and style fixes                                   [master~5] Documentation: mention `push.default` in git-push.txt
+[master~7] Git 1.8.0-rc0                                                                  [master~6] RelNotes/1.8.0: various typo and style fixes
+[master~8] Merge branch 'jk/completion-tests'                                             [master~7] Git 1.8.0-rc0
+[master~8^2] t9902: add completion tests for "odd" filenames                              [master~8] Merge branch 'jk/completion-tests'
+[master~9] Merge branch 'ep/malloc-check-perturb'                                         [master~8^2] t9902: add completion tests for "odd" filenames
+[master~9^2] MALLOC_CHECK: enable it, unless disabled explicitly                          [master~9] Merge branch 'ep/malloc-check-perturb'
+[master~10] Merge branch 'da/mergetool-custom'                                            [master~9^2] MALLOC_CHECK: enable it, unless disabled explicitly
+[master~10^2] mergetool--lib: Allow custom commands to override built-ins                 [master~10] Merge branch 'da/mergetool-custom'
+[master~11] Merge branch 'os/commit-submodule-ignore'                                     [master~10^2] mergetool--lib: Allow custom commands to override built-ins
+[master~11^2] commit: pay attention to submodule.$name.ignore in .gitmodules              [master~11] Merge branch 'os/commit-submodule-ignore'
+[master~12] Merge branch 'jc/blame-follows-renames'                                       [master~11^2] commit: pay attention to submodule.$name.ignore in .gitmodules
+[master~12^2] git blame: document that it always follows origin across whole-file renames [master~12] Merge branch 'jc/blame-follows-renames'
+[master~13] Merge branch 'jk/receive-pack-unpack-error-to-pusher'                         [master~12^2] git blame: document that it always follows origin across whole-file renames
+[master~13^2] receive-pack: drop "n/a" on unpacker errors                                 [master~13] Merge branch 'jk/receive-pack-unpack-error-to-pusher'
+[master~14] Merge branch 'rt/maint-clone-single'                                          [master~13^2] receive-pack: drop "n/a" on unpacker errors
+[master~14^2] clone --single: limit the fetch refspec to fetched branch                   [master~14] Merge branch 'rt/maint-clone-single'
+[master~15] Merge git://github.com/git-l10n/git-po                                        [master~14^2] clone --single: limit the fetch refspec to fetched branch
+[master~15^2] Merge git://github.com/gotgit/git-po-zh_CN                                  [master~15] Merge git://github.com/git-l10n/git-po
+[master~16] Update draft release notes to 1.8.0                                           [master~15^2] Merge git://github.com/gotgit/git-po-zh_CN
+[master~17] Sync with 1.7.12.2                                                            [master~16] Update draft release notes to 1.8.0
+[master~4^2~5] Git 1.7.12.2                                                               [master~17] Sync with 1.7.12.2
+[master~18] Merge branch 'rr/maint-submodule-unknown-cmd'                                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+from 37 to 38, [master~4^2^^2] removed, and [master~4^2~5],[master~18] added, why, it's diffrent than suppose of mine, only [master~18] is added.
+So what's reason of the subsitution from [master~4^2^^2] to [master~4^2~5]?
+ 
+
