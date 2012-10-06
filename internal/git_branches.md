@@ -221,7 +221,7 @@ $ git show-branch --more=38 master                                              
 [master~18] Merge branch 'rr/maint-submodule-unknown-cmd'                                 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-From 37 to 38, [master~4^2^^2] removed, and [master~4^2~5],[master~18] added. Why, it's confused, I suppose only [master~18] is added.
-So what's reason of the substitution from [master~4^2^^2] to [master~4^2~5] ?
+From 37 to 38, `[master~4^2^^2]` removed, and `[master~4^2~5]`,`[master~18]` added. Why, it's confused, I suppose only `[master~18]` is added.
+So what's reason to substitute `[master~4^2^^2]` to `[master~4^2~5]` ?
  
 
