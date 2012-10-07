@@ -10,14 +10,14 @@ Unix Diff
 
 There are 4 types of git diff, they are :
 
-	* Type 1 : `git diff` , WD (working dictionary) vs. Index
-	
-	* Type 2 : `git diff <commit>`, WD vs. <commit>.
-	
-	* Type 3 : `git diff --cached`, index vs. HEAD
-	           `git diff --cached <commit>`, index vs. <commit>
-	
-	* Type 4 : `git diff <commit1> <commit2>`, <commit1> vs. <commit2> 
+* Type 1 : `git diff` , WD (working dictionary) vs. Index
+
+* Type 2 : `git diff <commit>`, WD vs. <commit>.
+
+* Type 3 : `git diff --cached`, index vs. HEAD
+           `git diff --cached <commit>`, index vs. <commit>
+
+* Type 4 : `git diff <commit1> <commit2>`, <commit1> vs. <commit2> 
 
 1. Prepare a empty repository. And test stuffs
 
@@ -49,9 +49,9 @@ There are 4 types of git diff, they are :
 
 3. a normal edit,add,commit working flow.
 
-	(1) edit hello.txt. WD!=Index, Index=HEAD
-	(2) add hello.txt WD=Index, Index!=HEAD
-	(3) commit hello.txt WD=Index=HEAD 
+   (1) Edit hello.txt   : WD != Index ; Index = HEAD
+   (2) Add hello.txt    : WD = Index ; Index != HEAD
+   (3) Commit hello.txt : WD = Index = HEAD 
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   $ sed -ie 's/world/My world!/' hello.txt 
