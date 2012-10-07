@@ -49,10 +49,7 @@ There are 4 types of git diff, they are :
 
 3. a normal edit,add,commit working flow.
 
-   (1) Edit hello.txt   : WD != Index ; Index = HEAD
-   (2) Add hello.txt    : WD = Index ; Index != HEAD
-   (3) Commit hello.txt : WD = Index = HEAD 
-
+  (1) Edit hello.txt   : WD != Index ; Index = HEAD
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   $ sed -ie 's/world/My world!/' hello.txt 
   
@@ -71,7 +68,10 @@ There are 4 types of git diff, they are :
   $ git diff --cached
   $ git diff --cached HEAD
   $ git diff --cached master
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
+  (2) Add hello.txt    : WD = Index ; Index != HEAD
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # staged changes, now index updated, WD = Index, index != HEAD(master)
   $ git add hello.txt
   $ git diff
@@ -84,7 +84,10 @@ There are 4 types of git diff, they are :
    hello
   -world
   +My world!
-  
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  (3) Commit hello.txt : WD = Index = HEAD 
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # commit changes, now HEAD(master) updated, WD=Index=HEAD, clean again.
   $ git commit -a -m "change hello.txt, world->My world"
   [master 1b0ffec] change hello.txt, world->My world
@@ -94,5 +97,4 @@ There are 4 types of git diff, they are :
   $ git diff --cached HEAD
   $ git diff --cached master
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
