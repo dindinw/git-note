@@ -13,6 +13,7 @@ There are 4 types of git diff, they are :
 * Type 1 : `git diff` , `WD` (working dictionary) vs. `Index`
 
 * Type 2 : `git diff <commit>`, `WD` vs. <commit>.
+           `git diff HEAD` , `WD` vs. `HEAD`
 
 * Type 3 : `git diff --cached`, `Index` vs. `HEAD`
            `git diff --cached <commit>`, `Index` vs. <commit>
@@ -51,7 +52,7 @@ There are 4 types of git diff, they are :
 
   (1) Edit hello.txt   : `WD` != `Index` ; `Index` = `HEAD`
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  $ sed -i'' -e's/world/My world!/' hello.txt 
+  $ sed -i '' -e's/world/My world!/' hello.txt 
   
   # the WD is dirty, WD vs Index, shows 1 insertion, 1 deletion
   $ git diff
@@ -121,7 +122,7 @@ $ git show-branch                                        (0)
 --
  + [master] change hello.txt, world->My world
 *+ [br01] initialize hello.
-$ sed -i'' -e's/world/My world under br01/' hello.txt
+$ sed -i '' -e's/world/My world under br01/' hello.txt
 $ git diff                                               (1)
 diff --git a/hello.txt b/hello.txt
 index 94954ab..dcf51d0 100644
