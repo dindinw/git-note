@@ -323,4 +323,50 @@ $ git diff --cached
 * Unmerged path hello.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Now look at `--ours` and `--theirs`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ git diff --ours
+* Unmerged path hello.txt                                                 (1)
+diff --git a/hello.txt b/hello.txt
+index 38e4f48..369afc9 100644                                             (2)
+--- a/hello.txt
++++ b/hello.txt
+@@ -1,2 +1,6 @@
+ hello
++<<<<<<< HEAD
+ My world!
++=======
++My world under br01
++>>>>>>> br01
+
+$ git cat-file -p 369afc9                                                 (3)
+hello
+<<<<<<< HEAD
+My world!
+=======
+My world under br01
+>>>>>>> br01
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  * (1) shows a warning, since the conflict still not resoved.
+  * (2) `38e4f48` is the `master` version, `369afc9` is the blob for hello.txt under `WD`, see (3) 
+  * `--ours` means `HEAD`(`master` aka ours verison) vs. current `WD`
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ git diff --theirs
+* Unmerged path hello.txt
+diff --git a/hello.txt b/hello.txt
+index dcf51d0..369afc9 100644                                             (4)
+--- a/hello.txt
++++ b/hello.txt
+@@ -1,2 +1,6 @@
+ hello
++<<<<<<< HEAD
++My world!
++=======
+ My world under br01
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  * (4) `dcf51d0` is the blob under `br01`
+  * `--theirs` means branch (`br01` aka theirs version) vs. current `WD`
+
 
