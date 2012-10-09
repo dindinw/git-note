@@ -10,13 +10,13 @@ Unix Diff
 
 There are 4 types of git diff, they are :
 
-* Type 1 : `git diff` , `WD` (working dictionary) vs. `Index`
+* Type 1 : `git diff` , `Index` vs. `WD` (working dictionary)
 
-* Type 2 : `git diff <commit>`, `WD` vs. <commit>.
-           `git diff HEAD` , `WD` vs. `HEAD`
+* Type 2 : `git diff <commit>`, <commit> vs.`WD`.
+           `git diff HEAD` , `HEAD` vs. `WD`..
 
-* Type 3 : `git diff --cached`, `Index` vs. `HEAD`
-           `git diff --cached <commit>`, `Index` vs. <commit>
+* Type 3 : `git diff --cached`, `HEAD` vs. `Index`
+           `git diff --cached <commit>`, <commit> vs. `Index`
 
 * Type 4 : `git diff <commit1> <commit2>`, <commit1> vs. <commit2> 
 
